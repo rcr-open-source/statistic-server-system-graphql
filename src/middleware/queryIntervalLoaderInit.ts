@@ -1,9 +1,11 @@
 import { MiddlewareFn } from "type-graphql";
 import DataLoader from "dataloader";
 import { PeriodArgs } from "../objects/args";
-import { QueryReportType, QueryInterval } from "../objects/types";
+import { QueryInterval } from "../objects/types";
 import { Context, setLoaderToContext } from "@umk-stat/statistic-server-core";
 import { Datepart } from "@umk-stat/statistic-server-database";
+import { QueryReportType } from "@umk-stat/statistic-server-graphql-logs-graphql";
+
 
 export const queryIntervalLoaderInit: MiddlewareFn<Context> = (
     { context, args },

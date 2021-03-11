@@ -1,6 +1,6 @@
 import { MiddlewareFn } from "type-graphql";
 import DataLoader from "dataloader";
-import { StatisticType } from "../objects";
+import { StatisticType } from "@umk-stat/statistic-server-graphql-logs-graphql";
 import { setLoaderToContext, Context } from "@umk-stat/statistic-server-core";
 
 export const statisticQueryLoader: MiddlewareFn<Context> = (

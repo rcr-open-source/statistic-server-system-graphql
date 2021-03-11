@@ -3,7 +3,7 @@ import {
 } from "type-graphql";
 import { SystemAttributesType } from "@umk-stat/statistic-server-database";
 import {
-    QueryInterval, QueryReportType, ResultType, ResultTypeInterval,
+    QueryInterval, ResultType, ResultTypeInterval,
 } from ".";
 
 import { tableLogsDataLoaderInit } from "../../middleware/tableLogsDataLoaderInit";
@@ -12,7 +12,7 @@ import { resultTypeReportLoaderInit } from "../../middleware/resultTypeReportLoa
 import { resultTypeIntervalLoaderInit } from "../../middleware/resultTypeIntervalLoaderInit";
 import { queryLoaderInit } from "../../middleware/queryLoaderInit";
 import { queryIntervalLoaderInit } from "../../middleware/queryIntervalLoaderInit";
-import { BackendLogConnection, Datepart, PeriodArgs } from "@umk-stat/statistic-server-graphql-logs-graphql";
+import { BackendLogConnection, Datepart, PeriodArgs, QueryReportType } from "@umk-stat/statistic-server-graphql-logs-graphql";
 import { ConnectionArgsOrder, Context, getHashArgs, Node } from "@umk-stat/statistic-server-core";
 
 

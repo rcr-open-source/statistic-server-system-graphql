@@ -1,5 +1,5 @@
 import { ObjectType, Field } from "type-graphql";
-import { StatisticType } from ".";
+import { StatisticType } from "@umk-stat/statistic-server-graphql-logs-graphql";
 
 @ObjectType()
 export class QueryStatisticType {

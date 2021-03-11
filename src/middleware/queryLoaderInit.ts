@@ -1,6 +1,6 @@
 import { MiddlewareFn } from "type-graphql";
 import DataLoader from "dataloader";
-import { QueryReportType } from "../objects/types";
+import { QueryReportType } from "@umk-stat/statistic-server-graphql-logs-graphql";
 import { PeriodArgs } from "../objects/args";
 import { setLoaderToContext, Context } from "@umk-stat/statistic-server-core";
 

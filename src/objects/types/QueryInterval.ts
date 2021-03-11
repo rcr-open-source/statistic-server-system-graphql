@@ -1,5 +1,5 @@
 import { ObjectType, Field } from "type-graphql";
-import { QueryReportType } from ".";
+import { QueryReportType } from "@umk-stat/statistic-server-graphql-logs-graphql";
 
 @ObjectType()
 export class QueryInterval {
