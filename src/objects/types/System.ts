@@ -12,8 +12,10 @@ import { resultTypeReportLoaderInit } from "../../middleware/resultTypeReportLoa
 import { resultTypeIntervalLoaderInit } from "../../middleware/resultTypeIntervalLoaderInit";
 import { queryLoaderInit } from "../../middleware/queryLoaderInit";
 import { queryIntervalLoaderInit } from "../../middleware/queryIntervalLoaderInit";
+import { targetsDataLoaderInit } from "../../middleware/targetsDataLoaderInit";
 import { BackendLogConnection, Datepart, PeriodArgs, QueryReportType } from "@umk-stat/statistic-server-graphql-logs-graphql";
 import { ConnectionArgsOrder, Context, getHashArgs, Node } from "@umk-stat/statistic-server-core";
+import { Target } from "@umk-stat/statistic-server-client-graphql";
 
 
 @ObjectType({
@@ -179,6 +181,25 @@ export class System implements Node {
 
     }
 
+    @UseMiddleware(targetsDataLoaderInit)
+    @Field(() => [Target], {
+        nullable: false,
+    })
+    public async targets(
+
+        @Ctx()
+        context: Context,
+
+    ): Promise<Target[]> {
+
+        const { id } = this;
+        const edgeType = "targetsDataLoader";
+        const hash = getHashArgs([]);
+        const targets = await context.dataLoadersMap.get(edgeType)?.get(hash)?.load(id);
+
+        return targets;
+
+    }
 
 }
 
